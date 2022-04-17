@@ -1,11 +1,9 @@
 package com.hewei.springcloud.controller;
 
 
-
 import com.hewei.springcloud.entities.CommonResult;
 import com.hewei.springcloud.entities.Payment;
 import com.hewei.springcloud.service.PaymentService;
-
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
@@ -28,7 +26,7 @@ public class PaymentController {
 
         int result = paymentService.create(payment);
         if (result>0){
-            return new CommonResult(200,"插入数据成功，serverPort:"+serverPort,result);
+            return new CommonResult(200,"插入数据成功"+serverPort,result);
         }else {
             return new CommonResult(500,"插入数据失败",null);
         }
@@ -39,7 +37,7 @@ public class PaymentController {
 
         Payment payment = paymentService.paymentById(id);
         if (payment != null){
-            return new CommonResult(200,"查询数据成功,serverPort:"+serverPort,payment);
+            return new CommonResult(200,"查询数据成功"+serverPort,payment);
         }else {
             return new CommonResult(500,"查询数据失败,查询id:"+id,null);
         }

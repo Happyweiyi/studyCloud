@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.hewei.springcloud.dao.PaymentDao">
+    <insert id="create" parameterType="Payment" useGeneratedKeys="true" keyProperty="id">
+        insert into payment(serial) values (#{serial})
+    </insert>
+
+    <!--构造结果集装查询记录 -->
+    <resultMap id="BaseResultMap" type="com.hewei.springcloud.entities.Payment">
+        <id column="id" property="id" jdbcType="BIGINT"></id>
+        <id column="serial" property="serial" jdbcType="VARCHAR"></id>
+    </resultMap>
+    <select id="paymentById" parameterType="Long" resultMap="BaseResultMap">
+        select * from payment where id = #{id}
+    </select>
+</mapper>

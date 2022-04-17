@@ -14,6 +14,8 @@
         <module>consumerOrder</module>
         <module>apiCommon</module>
         <module>eurekaServer</module>
+        <module>eurekaServer2</module>
+        <module>paymentCloud1</module>
     </modules>
 
     <properties>

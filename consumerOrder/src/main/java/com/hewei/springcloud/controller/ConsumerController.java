@@ -15,8 +15,8 @@ import javax.annotation.Resource;
 @Slf4j
 public class ConsumerController {
 
-    private static final String PAYMENT_URL = "http://localhost:8001";
-
+    //private static final String PAYMENT_URL = "http://localhost:8001";
+    private static final String PAYMENT_URL = "http://PAYMENT-SERVICE";
     @Resource
     private RestTemplate restTemplate;
 
